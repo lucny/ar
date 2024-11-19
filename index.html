@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.2/aframe/build/aframe-ar.min.js"></script>
-  </head>
-  <body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs>
+<head>
+<title>AR.js A-Frame Location-based</title>
+<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/3.4.5/three.js/build/ar-threex-location-only.js'></script>
+<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/3.4.5/aframe/build/aframe-ar.js'></script>
+</head>
+<body>
+<a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
+    <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
+    <a-box color="red" gps-new-entity-place="latitude: <your-lat>; longitude: <your-loon>" depth="10" height="10" width="10"></a-box>
       <!-- Koule uprostřed místnosti -->
       <a-sphere position="0 1 0" radius="0.2" color="#ff5555"></a-sphere>
 
@@ -14,9 +18,6 @@
 
       <!-- Obraz na pravé zdi -->
       <a-plane position="1.5 1.5 0" rotation="0 -90 0" width="1.5" height="1" src="treti.jpg"></a-plane>
-
-      <!-- Kamera -->
-      <a-camera position="0 0 0" gps-camera></a-camera>
-    </a-scene>
-  </body>
+</a-scene>
+</body>
 </html>
