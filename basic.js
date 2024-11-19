@@ -20,9 +20,9 @@ window.onload = () => {
                 });
                 const box = document.createElement("a-box");
                 box.setAttribute("scale", {
-                    x: 20,
-                    y: 20,
-                    z: 20
+                    x: 2,
+                    y: 2,
+                    z: 2
                 });
                 box.setAttribute('material', { color: 'red' } );
                 box.setAttribute("position", {
